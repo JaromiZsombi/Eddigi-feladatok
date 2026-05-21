@@ -39,5 +39,18 @@ let con = await mysql.createConnection({
     user: "root",
     password: ""
  });
+
+ # index.js alja
+ app.get("/", (req, res) => res.send("<h1>Virágbolt v1.0.0</h1>"));
+ 
+ többire példa:
+ 
+ app.get("/api/categories", getCategories);
+ 
+ app.put("/api/categories", putCategories);
+ 
+ app.delete("/api/categories", deleteCategories);
+
+ app.listen(8000, err => console.log(err ? err : "Server on :88"));
  
 # frontend

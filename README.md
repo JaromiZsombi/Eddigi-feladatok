@@ -17,13 +17,14 @@ pnpm init
 ```
 pnpm i express cors mysql2 
 ```
-<img width="549" height="343" alt="image" src="https://github.com/user-attachments/assets/54a04edd-10ad-4cdc-8d12-32ea27d3501d" />
+<img width="516" height="434" alt="image" src="https://github.com/user-attachments/assets/b8997146-8d8b-4a7b-8e2d-27e4198761b7" />
 
 ```
-"dev":"node index.js",
-"type":"module"
+"type":"module",
+"dev": "node --watch index.js"
 ```
-<img width="540" height="483" alt="image" src="https://github.com/user-attachments/assets/ffb870d9-2716-4613-8741-58bc635b0789" />
+![Uploading image.png…]()
+
 
 # index.js eleje
 ```

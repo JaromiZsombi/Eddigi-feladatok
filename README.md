@@ -33,17 +33,11 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 
 let con = await mysql.createConnection({
-
     host: "localhost",
-    
     port: 3306,
-    
     database: "viragbolt",
-    
     user: "root",
-    
     password: ""
-    
  });
  
 # frontend

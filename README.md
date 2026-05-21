@@ -32,16 +32,22 @@ import cors from "cors";
 
 import mysql from "mysql2/promise";
 
-let con = await mysql.createConnection({
+*let con = await mysql.createConnection({
+
     host: "localhost",
+    
     port: 3306,
+    
     database: "viragbolt",
+    
     user: "root",
+    
     password: ""
- });
+    
+ });*
 
  # index.js alja
- app.get("/", (req, res) => res.send("<h1>Virágbolt v1.0.0</h1>"));
+ *app.get("/", (req, res) => res.send("<h1>Virágbolt v1.0.0</h1>"));*
  
  többire példa:
  

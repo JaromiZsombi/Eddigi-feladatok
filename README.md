@@ -23,7 +23,7 @@ pnpm i express cors mysql2
 "type":"module",
 "dev": "node --watch index.js"
 ```
-![Uploading image.png…]()
+<img width="509" height="436" alt="image" src="https://github.com/user-attachments/assets/dcdb1fed-ba15-434f-8c08-b4654861ed57" />
 
 
 # index.js eleje

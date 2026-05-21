@@ -9,4 +9,12 @@
 # java
 # javafx
 # backend
+pnpm init
+<img width="507" height="279" alt="image" src="https://github.com/user-attachments/assets/69ab7166-e10e-4b7b-832d-663a6f2613ed" />
+pnpm i express cors mysql2 
+<img width="549" height="343" alt="image" src="https://github.com/user-attachments/assets/54a04edd-10ad-4cdc-8d12-32ea27d3501d" />
+"dev":"node index.js",
+"type":"module"
+<img width="540" height="483" alt="image" src="https://github.com/user-attachments/assets/ffb870d9-2716-4613-8741-58bc635b0789" />
+
 # frontend

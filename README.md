@@ -40,8 +40,21 @@ let con = await mysql.createConnection({
     password: ""
  });
 ```
+# get funkció
+
+```
+async function getCategories(req, res) {
+    let sql = "select * from kategoriak";
+    try {
+        const [ json ] = await con.query(sql);
+        res.send(json);        
+    } catch(err) { res.status(500).send({ error: "Adatbázis hiba!" })}
+}
+```
+
+
  # index.js alja
- ```>app.get("/", (req, res) => res.send("<h1>Virágbolt v1.0.0</h1>"));```
+ ```app.get("/", (req, res) => res.send("<h1>Virágbolt v1.0.0</h1>"));```
  
  többire példa:
  ```

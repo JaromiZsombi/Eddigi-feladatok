@@ -17,7 +17,7 @@ pnpm init
 ```
 pnpm i express cors mysql2 
 ```
-<img width="516" height="434" alt="image" src="https://github.com/user-attachments/assets/b8997146-8d8b-4a7b-8e2d-27e4198761b7" />
+<img width="539" height="337" alt="image" src="https://github.com/user-attachments/assets/d25a652a-03bf-4ffc-ba25-28b9fa52eabb" />
 
 ```
 "type":"module",

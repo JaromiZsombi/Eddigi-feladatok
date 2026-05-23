@@ -75,6 +75,121 @@ System.out.printf("%s\n", String.join(", ", madarMagas));
 ```
 
 # javafx
+
+Menü, mindenhova kelleni fog, bármi is a feladat, előbb hozz létre egy VBOX-ot, meg ilyen children cuccot (nemtom mire jó tbh)
+
+```
+<VBox alignment="CENTER" prefHeight="451.0" prefWidth="543.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.diafilmgui.HelloController">
+   <children>
+    </children>
+</VBox>
+```
+
+Aztán most a menü
+```
+    <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Fájl">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onOpenClick" text="Megnyitás">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onCloseClick" text="Kilépés" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Súgó">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onAboutClick" text="Névjegy" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+```
+
+Előző feladatból Hello Controllerbe:
+```
+private class Diafilm {
+        public String cim;
+        public int ev;
+        public int kocka;
+        public String szines;
+
+
+        public Diafilm(String sor) {
+            String[] s = sor.split(";");
+            cim = s[0];
+            ev = Integer.parseInt(s[1]);
+            kocka = Integer.parseInt(s[2]);
+            szines = s[3];
+
+
+        }
+```
+
+toString ha valamelyik adatot átkellene írni valahogy:
+```
+@Override
+        public String toString() {
+            return String.format("%s (%d, %d kocka, %s)", cim, ev, kocka, szines.equals("I")?"színes":"fekete-fehér");
+        }
+```
+
+Beolvasás:
+```
+private void betolt(File fajlnev){
+        Scanner beolvasas = null;
+        try {
+            beolvasas = new Scanner(fajlnev, "utf-8");
+            beolvasas.nextLine();
+            while(beolvasas.hasNextLine()) madarak.add(new Madarak(beolvasas.nextLine()));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(beolvasas != null) beolvasas.close();
+        }
+
+    }
+
+private ObservableList<Diafilm> diafilmek = FXCollections.observableArrayList();
+
+private FileChooser fc = new FileChooser();
+
+    public void initialize() {
+
+        fc.setInitialDirectory(new File("./"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV fájlok", "*.csv"));
+        diafilmekLV.setItems(diafilmek);
+
+
+    }
+```
+
+HelloControllerbe a menühöz:
+```
+public void onOpenClick() {
+        File fajl = fc.showOpenDialog(diafilmekLV.getScene().getWindow());
+        if(fajl != null) betolt(fajl);
+        darab.setText(diafilmek.size() + " darab");
+        ObservableList<Integer> evek = FXCollections.observableArrayList(diafilmek.stream().map(obj->obj.ev).distinct().sorted().toList());
+        cbox.setItems(evek);
+        cbox.getSelectionModel().select(0);
+    }
+
+    public void onCloseClick() {
+        Platform.exit();
+    }
+
+    public void onAboutClick() {
+        Alert nevjegy = new Alert(Alert.AlertType.INFORMATION);
+        nevjegy.setTitle("Névjegy");
+        nevjegy.setHeaderText("");
+        nevjegy.setContentText("Diafilmek v1.0.0\n(C)Kandó");
+        nevjegy.showAndWait();
+    }
+```
+
 # backend
 ```
 pnpm init

@@ -7,6 +7,22 @@
 - [Frontend](#frontend)
 
 # java
+
+A lista nevét, attribútumát át kell írni, illetve a soutot is, meg ha az első sorban nem adat van, csak akkor kell a beolvasas.nextLine
+
+```
+List<Madarak> madarak = new ArrayList<>();
+        try(Scanner beolvasas = new Scanner(new File("madarak.csv"))){
+            beolvasas.nextLine();
+            while (beolvasas.hasNextLine()){
+                madarak.add(new Madarak(beolvasas.nextLine()));
+            }
+        }catch (Exception e){
+            System.out.println("Hiba: "+e.getMessage());
+        }
+        System.out.printf("1) A madarak.csv fájlból %d madár adata beolvasva\n", madarak.size());
+```
+
 # javafx
 # backend
 ```

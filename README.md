@@ -8,6 +8,26 @@
 
 # java
 
+Egy másik valami.java fileba a classt hozd létre
+```
+public class Madarak {
+    String magyarNev;
+    String latinNev;
+    int atlagSuly;
+    int atlagMagassag;
+    int atlagReptav;
+
+    public Madarak(String line) {
+        String[] lineArr = line.split(";");
+        magyarNev = lineArr[0];
+        latinNev = lineArr[1];
+        atlagSuly = Integer.parseInt(lineArr[2]);
+        atlagMagassag = Integer.parseInt(lineArr[3]);
+        atlagReptav = Integer.parseInt(lineArr[4]);
+    }
+}
+```
+
 A lista nevét, attribútumát át kell írni, illetve a soutot is, meg ha az első sorban nem adat van, csak akkor kell a beolvasas.nextLine
 
 ```

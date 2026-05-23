@@ -38,6 +38,22 @@ TreeMap<Integer, Integer> madarakMagassaga = new TreeMap<>();
         }
 ```
 
+Ha valami alapján kikéne íratni a treemapben a dolgokat: 
+```
+List<String> madarMagas = new ArrayList<>();
+        madarakMagassaga.forEach((key, value)->{
+            if (value>1){
+                madarMagas.add(key+"cm"+" "+ "("+value+")");
+            }
+        });
+        System.out.printf("%s\n", String.join(", ", madarMagas));
+```
+a .add-nál pluszal add hozzá a cuccokat, a String.join meg megoldja a vesszőzést (valszeg kell majd)
+Külön is iderakom azért a String.join-t
+```
+System.out.printf("%s\n", String.join(", ", madarMagas));
+```
+
 # javafx
 # backend
 ```

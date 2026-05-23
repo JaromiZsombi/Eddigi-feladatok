@@ -23,6 +23,21 @@ List<Madarak> madarak = new ArrayList<>();
         System.out.printf("1) A madarak.csv fájlból %d madár adata beolvasva\n", madarak.size());
 ```
 
+Treemap:
+
+A categ az az ami alapján csinálja a kategóriákat, itt pl a magasság szerint
+```
+TreeMap<Integer, Integer> madarakMagassaga = new TreeMap<>();
+        for (Madarak obj: madarak){
+            int categ = obj.getAtlagMagassag();
+            if(!madarakMagassaga.containsKey(categ)){
+                madarakMagassaga.put(categ, 1);
+            }else{
+                madarakMagassaga.put(categ, madarakMagassaga.get(categ)+1);
+            }
+        }
+```
+
 # javafx
 # backend
 ```

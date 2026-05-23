@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.madarakgui.HelloController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Fájl">
+            <items>
+              <MenuItem fx:id="onOpenClick" mnemonicParsing="false" onAction="#onOpenClick" text="Megnyitás">
+                  <accelerator>
+                      <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+              </MenuItem>
+                  <MenuItem fx:id="onCloseClick" mnemonicParsing="false" onAction="#onCloseClick" text="Kilépés" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Súgó">
+            <items>
+              <MenuItem fx:id="onAboutClick" mnemonicParsing="false" onAction="#onAboutClick" text="Névjegy" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="23.0" prefWidth="476.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="19.0" prefWidth="55.0" text="Súly" />
+            <TextField fx:id="kisebbSuly" prefHeight="25.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></TextField>
+            <Label text="-" />
+            <TextField fx:id="nagyobbSuly" prefHeight="25.0" prefWidth="50.0" />
+            <Button fx:id="filterBtn" disable="true" mnemonicParsing="false" onMouseClicked="#onFilterClick" prefHeight="25.0" prefWidth="75.0" text="Szűrés" />
+            <Button fx:id="allBtn" disable="true" mnemonicParsing="false" onMouseClicked="#onAllClick" prefHeight="25.0" prefWidth="75.0" text="Mind" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="186.0" prefWidth="476.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ListView fx:id="madarakLV" minHeight="300.0" minWidth="400.0" prefHeight="300.0" prefWidth="486.0" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
